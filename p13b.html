@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <meta charset="utf-8">
+   <title>Práctica 13b JS</title>
+   <script>
+		var frase = prompt("Comprueba si es un palíndromo: ");
+
+		function esPalindromo(p)
+		{
+			// Convierto la cadena a minúscula
+			var minuscula = p.toLowerCase();
+			// Convierto la cadena a array
+			var convertido = minuscula.split("");
+			var sinEspacios = "";
+			for (i in convertido) {
+				if (convertido[i] != " ") {
+					sinEspacios += convertido[i];
+				}
+			}
+			// Vuelta a array
+			var nuevoArray = sinEspacios.split("");
+			var reves = nuevoArray.reverse();
+			// Compruebo igualdad
+			palin = true;
+			var a = reves.length - 1;
+
+			for (var i=0;i<nuevoArray.length;i++) {
+				if (nuevoArray[i] != reves[a]) {
+					palin = false;
+				};
+				a--;
+			}
+			if (palin)
+			{
+				return("¡¡Es un palíndromo!!");
+			}
+			else
+			{
+				return("No es un palíndromo...");
+			}
+		}
+		alert(esPalindromo(frase));
+   </script>
+ </head>
+ <body>
+	
+ </body>
+</html>
